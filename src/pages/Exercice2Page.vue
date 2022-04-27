@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page padding>
     <h1>Exercice 2</h1>
   </q-page>
 </template>
@@ -8,6 +8,10 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'PageExercice2'
+  name: 'Exercie2Page'
 })
 </script>
+
+<style>
+
+</style>

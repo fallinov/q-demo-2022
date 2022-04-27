@@ -12,7 +12,7 @@
 
   5) Afficher le nombre de caractères du nom (troisième ligne en gras)
 
-  6) Créer une propriété calculée pour afficher le nom en majuscules (quatrième ligne en gras)
+  6) Afficher le nom en majuscules (quatrième ligne en gras)
 
   7) N'affichez le cadre beige que si un nom et un âge valide ont été saisis.
      Sinon, affichez le cadre rouge <div class="no-details">
