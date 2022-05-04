@@ -37,13 +37,16 @@
       <div className="row q-mb-md">
         <label>Nom:</label>
         <input type="text" v-model="name">
-        <label className="error">Maximum 15 caractères
+        <label className="error" v-show="!nameValid()">
+          Maximum 15 caractères
         </label>
       </div>
       <div className="row q-mb-md">
         <label>Age:</label>
         <input type="number" v-model="age">
-        <label className="error">Veuillez entrer un âge compris entre 1 et 100</label>
+        <label className="error" v-show="!ageValid()">
+          Veuillez entrer un âge compris entre 1 et 100
+        </label>
       </div>
       <div className="row">
         <button>Générer une personne</button>
