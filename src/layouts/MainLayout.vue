@@ -31,20 +31,19 @@
          Mes exercices
         </q-item-label>
         <q-item
-          to="/ex1"
+          v-for="lien of liens"
+          :key="lien.url"
+          :to="lien.url"
           clickable
           v-ripple
           active-class="my-menu-link"
         >
           <q-item-section avatar>
-            <q-icon name="rocket_launch" />
+            <q-icon :name="lien.icone" />
           </q-item-section>
-          <q-item-section>Exercice 1</q-item-section>
+          <q-item-section>{{ lien.nom }}</q-item-section>
         </q-item>
       </q-list>
-      <router-link :to="{ path: '/ex1' }">Exercice 1</router-link>
-      <br>
-      <router-link :to="{ path: '/ex2' }">Exercice 2</router-link>
     </q-drawer>
 
     <q-page-container>
@@ -62,13 +61,13 @@ export default defineComponent({
     return {
       liens: [{
         nom: 'Exercice 1',
-        lien: '/ex1',
+        url: '/ex1',
         icone: 'face'
       },
       {
         nom: 'Exercice 2',
-        lien: '/ex2',
-        icone: 'euro_symbol'
+        url: '/ex2',
+        icone: 'fastfood'
       }
       ]
     }
