@@ -50,7 +50,7 @@
         </label>
       </div>
       <div className="row">
-        <button>Générer une personne</button>
+        <button @click="randomName">Générer une personne</button>
       </div>
     </div>
     <div v-if="nameValid() && ageValid()" className="description q-mb-lg">
@@ -67,6 +67,14 @@
 
 <script>
 import { defineComponent } from 'vue'
+const noms = [
+  'Steve',
+  'Pauline',
+  'Jean',
+  'Josette',
+  'Eve',
+  'Fritz'
+]
 
 export default defineComponent({
   name: 'Exercie1Page',
@@ -90,6 +98,11 @@ export default defineComponent({
     },
     ageValid () {
       return this.age > 0 && this.age <= 100
+    },
+    randomName () {
+      this.name = noms[Math.floor(Math.random() * noms.length)]
+      this.age = Math.floor(Math.random() * 100)
+      // this.age = parseInt(Math.random() * 100) + 1
     }
   }
 })
