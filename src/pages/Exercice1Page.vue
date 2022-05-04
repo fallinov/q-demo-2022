@@ -36,14 +36,15 @@
     <div className="form q-mb-lg">
       <div className="row q-mb-md">
         <label>Nom:</label>
-        <input type="text" v-model="name">
+        <input type="text" v-model="name"
+               :class="{'error': !nameValid()}">
         <label className="error" v-show="!nameValid()">
           Maximum 15 caractères
         </label>
       </div>
       <div className="row q-mb-md">
         <label>Age:</label>
-        <input type="number" v-model="age">
+        <input type="number" v-model="age" :class="{'error': !ageValid()}">
         <label className="error" v-show="!ageValid()">
           Veuillez entrer un âge compris entre 1 et 100
         </label>
