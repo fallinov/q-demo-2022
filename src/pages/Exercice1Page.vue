@@ -80,8 +80,8 @@ export default defineComponent({
   name: 'Exercie1Page',
   data () {
     return {
-      name: 'Steve',
-      age: '28'
+      name: '',
+      age: 0
     }
   },
   computed: {
@@ -104,6 +104,9 @@ export default defineComponent({
       this.age = Math.floor(Math.random() * 100)
       // this.age = parseInt(Math.random() * 100) + 1
     }
+  },
+  mounted () {
+    this.randomName()
   }
 })
 </script>
