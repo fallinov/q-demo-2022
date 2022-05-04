@@ -36,7 +36,7 @@
           :to="lien.url"
           clickable
           v-ripple
-          active-class="my-menu-link"
+          active
         >
           <q-item-section avatar>
             <q-icon :name="lien.icone" />
