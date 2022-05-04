@@ -60,7 +60,17 @@ export default defineComponent({
   name: 'MainLayout',
   data () {
     return {
-      key: value
+      liens: [{
+        nom: 'Exercice 1',
+        lien: '/ex1',
+        icone: 'face'
+      },
+      {
+        nom: 'Exercice 2',
+        lien: '/ex2',
+        icone: 'euro_symbol'
+      }
+      ]
     }
   },
   components: {
