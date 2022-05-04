@@ -44,13 +44,13 @@
       </div>
       <div className="row q-mb-md">
         <label>Age:</label>
-        <input type="number" v-model="age" :class="{'error': !ageValid()}">
+        <input v-autofocus type="number" v-model="age" :class="{'error': !ageValid()}">
         <label className="error" v-show="!ageValid()">
           Veuillez entrer un âge compris entre 1 et 100
         </label>
       </div>
       <div className="row">
-        <button @click="randomName">Générer une personne</button>
+        <button v-rouge @click="randomName">Générer une personne</button>
       </div>
     </div>
     <div v-if="nameValid() && ageValid()" className="description q-mb-lg">
@@ -107,6 +107,19 @@ export default defineComponent({
   },
   mounted () {
     this.randomName()
+  },
+  directives: {
+    autofocus: {
+      mounted (element) {
+        element.focus()
+      }
+    },
+    rouge: {
+      mounted (element) {
+        element.style.backgroundColor = 'red'
+        element.style.color = 'white'
+      }
+    }
   }
 })
 </script>
