@@ -2,10 +2,10 @@
   <q-page padding>
     <div class="q-pa-md row items-stretch">
 
-      <plat v-for="plat in plats"
-            :key="plat.id"
-            :plat="plat"
-            v-on:supprimer="supprimerPlat"
+      <plat v-for="p in plats"
+            :key="p.id"
+            :passeplat="p"
+            @supprimer="supprimerPlat"
       ></plat>
 
     </div>
@@ -21,7 +21,7 @@ export default {
     return {
       plats: [
         {
-          id: 1,
+          id: 23,
           image: 'https://i.imgur.com/0umadnY.jpg',
           nom: 'Burger',
           description: "Un hamburger est un sandwich composé d'une ou plusieurs tranches de viande hachée, généralement du bœuf, placées dans un petit pain ou une brioche.",
@@ -35,14 +35,14 @@ export default {
           note: 5
         },
         {
-          id: 3,
+          id: 8,
           image: 'https://i.imgur.com/0umadnY.jpg',
           nom: 'Burger',
           description: "Un hamburger est un sandwich composé d'une ou plusieurs tranches de viande hachée, généralement du bœuf, placées dans un petit pain ou une brioche.",
           note: 1
         },
         {
-          id: 4,
+          id: 54,
           image: 'https://i.imgur.com/xAuhNVg.jpg',
           nom: 'BBQ Ribs',
           description: 'Les BBQ ribs ou barbecue ribs sont des grands classiques très appréciés partout dans le monde.',
@@ -52,9 +52,9 @@ export default {
     }
   },
   methods: {
-    supprimerPlat (id) {
+    supprimerPlat (idPlatASupprimer) {
       this.plats = this.plats.filter(function (plat) {
-        return plat.id !== id
+        return plat.id !== idPlatASupprimer
       })
     }
   }

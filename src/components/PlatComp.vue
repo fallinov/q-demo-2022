@@ -1,18 +1,18 @@
 <template>
   <div class="card shadow-1">
-    <img :src="plat.image" width="198" height="180">
+    <img :src="passeplat.image" width="198" height="180">
     <div class="card-content">
-      <h1 class="text-primary">{{ plat.nom }}</h1>
-      <p>{{ plat.description }}</p>
+      <h1 class="text-primary">{{ passeplat.nom }}</h1>
+      <p>{{ passeplat.description }}</p>
       <p>
         <small>
           <b>Note:</b>
         </small>
         <b class="text-primary">
-          {{ plat.note }}/5
+          {{ passeplat.note }}/5
         </b>
       </p>
-      <q-btn @click="$emit('supprimer', plat.id)"
+      <q-btn @click="$emit('supprimer', passeplat.id)"
              class="full-width q-ma-md"
              color="secondary"
              icon="delete"
@@ -24,7 +24,7 @@
 <script>
 export default {
   props: {
-    plat: {
+    passeplat: {
       type: Object,
       required: true
     }
