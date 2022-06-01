@@ -2,35 +2,20 @@
   <q-page padding>
     <h1>Liste des clients</h1>
     <q-list bordered separator>
-      <q-item
+      <client-item
         v-for="cli in clients"
         :key="cli.id.value"
-        clickable
-        v-ripple
-      >
-        <!-- Photo du client -->
-        <q-item-section avatar>
-          <q-avatar>
-            <img :src="cli.picture.thumbnail">
-          </q-avatar>
-        </q-item-section>
-        <!-- Nom et prénom -->
-        <q-item-section>
-          <q-item-label>
-            {{ cli.name.first }} <strong>{{ cli.name.last }}</strong>
-          </q-item-label>
-          <q-item-label caption>
-            {{ cli.email }}
-          </q-item-label>
-        </q-item-section>
-      </q-item>
+        :personne="cli"
+      />
     </q-list>
   </q-page>
 </template>
 
 <script>
+import ClientItem from 'components/ClientItem'
 export default {
   name: 'ListeClients',
+  components: { ClientItem },
   data () {
     return {
       clients: [
