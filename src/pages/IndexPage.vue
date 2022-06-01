@@ -1,11 +1,7 @@
 <template>
-  <q-page class="flex flex-center">
-    <h1>Bonjour le monde</h1>
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page padding>
+    <h1>CliGest</h1>
+    <p>L'application pour gérer vos clients !</p>
   </q-page>
 </template>
 
@@ -16,3 +12,7 @@ export default defineComponent({
   name: 'IndexPage'
 })
 </script>
+
+<style lang="sass" scoped>
+
+</style>
